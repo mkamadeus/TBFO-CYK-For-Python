@@ -1,0 +1,5 @@
+a123 = int(input())
+b123 = 0.1123123213
+if(a>b):
+    for i in range(a-b):
+        print(i/b+i/a)
