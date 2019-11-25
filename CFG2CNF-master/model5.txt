@@ -1,0 +1,9 @@
+Terminals:
+a b 0 1 + * ( )
+Variables:
+I F T E
+Productions:
+I -> a | b | Ia | Ib | I0 | I1;
+F -> I | (E);
+T -> F | T*F;
+E -> T | E+T
