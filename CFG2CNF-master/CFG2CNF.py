@@ -124,6 +124,15 @@ def UNIT(productions, variables):
 		i+=1
 	return result
 
+global CNF
+CNF = {}
+
+def convertToMap (Production):
+	for i in range (len(Production)):
+		s = ''
+		for j in range (len(Productions[i][1])):
+			s = s + Productions[i][1][j]
+		CNF.update({s : Productions[i][0]})
 
 if __name__ == '__main__':
 	if len(sys.argv) > 1:
@@ -138,8 +147,11 @@ if __name__ == '__main__':
 	Productions = BIN(Productions, variables=V)
 	Productions = DEL(Productions)
 	Productions = UNIT(Productions, variables=V)
-	
+	print(Productions)
+	convertToMap(Productions)
 	print( helper.prettyForm(Productions) )
 	print( len(Productions) )
+	for key in CNF:
+		print(CNF[key],"->", key)
 	open('out.txt', 'w').write(	helper.prettyForm(Productions) )
 

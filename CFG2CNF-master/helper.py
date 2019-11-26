@@ -26,7 +26,6 @@ def cleanProduction(expression):
 		rightTerms = rule.split(' -> ')[1].split(' | ')
 		for term in rightTerms:
 			result.append( (leftSide, term.split(' ')) )
-	print(result)
 	return result
 
 def cleanAlphabet(expression):
