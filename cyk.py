@@ -2,11 +2,13 @@ import re
 import pprint as pp
 
 # Regex List
-regexList = [r'[A..z]*']
+regexList = [r'[A-z0-9]*', r'[0-9]*', r'[A-Za-z_][A-Za-z_0-9]*']
 
 # Maps regex into valid key
 regexMap = {
-    r'[A..z]*' : ["thisisastring", "thisisavar"]
+    r'[A-z0-9]*' : ["string"],
+    r'[0-9]*' : ["number"],
+    r'[A-Za-z_][A-Za-z_0-9]*' : ["variable"],
 }
 
 # Grammar in CNF form
@@ -51,7 +53,6 @@ def cyk(tokenizedInput):
 
     # Initialize first row (Bottom-Up DP base case)
     for i in range(len(tokenizedInput)):
-        print(cykTable)
         # If key valid..
         try:
             cykTable[0][i].extend(chomskyGrammar[tokenizedInput[i]])
@@ -66,8 +67,6 @@ def cyk(tokenizedInput):
                             cykTable[0][i].extend(chomskyGrammar[regexType])
                         except KeyError:
                             continue
-                    break
-
                 
     # Iterate DP Bottom Up
     for i in range(1,len(tokenizedInput)):
