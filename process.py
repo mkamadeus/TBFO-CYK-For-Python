@@ -1,6 +1,5 @@
 import re
 
-white_space = ' '
 '''
 def cleaningProduction(OldProduction):
     for key in OldProduction:
@@ -41,6 +40,58 @@ def cleaningProduction(OldProduction):
                     print('U'+str(variable),'->',NewProduction)
                     variable+=1
 '''           
+white_space = ' '
+
+def IsKataSama(str1,str2):
+    # Melakukan cek apakah str1 == str2
+    # Kamus Lokal
+    b = True
+    # Algoritma
+    if(len(str1) != len(str2)):
+        b = False
+    else:
+        i = 1
+        while(b and i < len(str1)):
+            if(str1[i] != str2[i]):
+                b = False
+            else:
+                i+=1
+    return b
+
+def JumlahKata(str1):
+    # Melakukan perhitungan jumlah kata
+    # Input tidak diakhiri blank
+    # Kamus lokal
+    sum = 1
+    i = 0
+    # Algoritma
+    # IgnoreBlank
+    while(str1[i] == white_space):
+        i+=1
+    while(i < len(str1)):
+        if(str1[i] == white_space):
+            sum+=1
+        i+=1
+    return sum
+
+def CKata(str1):
+    # Kamus lokal
+    i = 0
+    lexeme = ''
+    # Algoritma
+    # IgnoreBlank
+    while(str1[i] == white_space):
+        i+=1
+    while(i < len(str1) and str1[i] != white_space):
+        lexeme+=str1[i]
+        i+=1
+    return lexeme
+  
+def CleaningUnitRules(OldDict, NewDict):
+    # Melakukan pembersihan unit rules
+    for key in OldDict:
+        for i in range(len(OldDict[key])):
+            pass
 
 dictionary = {
             # Boolean
@@ -52,4 +103,3 @@ dictionary = {
             'or':['OR'],
             'not BOOL':['BOOL']
             }
-cleaningProduction(dictionary)
