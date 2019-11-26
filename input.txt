@@ -1,1 +1,1 @@
-class asa():
+print(PerintahMatthewKevinAmadeus)

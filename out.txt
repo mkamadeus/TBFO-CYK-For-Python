@@ -58,12 +58,10 @@ H3 -> "
 L1 -> R3 L2
 L2 -> H3 L3
 L4 -> H3 Q3
-PRINTVALUE -> VV M1
-PRINTVALUE -> string
+PRINTVALUE -> VV M1 | stringRAISE
 M1 -> R3 M2
 M2 -> N3 M3
 M4 -> Q3 OPS
-RAISE -> raise STRING
 RANGE -> range N1 | range O1
 N1 -> R3 N2
 N2 -> VAL Q3 | ==
