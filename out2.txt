@@ -1,5 +1,5 @@
+S -> S S | VAR A1 | VAR B1 | VAR C1 | VAR D1 | VAR E1 | L3 EXPRES | IF ELIF | IF ELSE | N3 INBRACKET | H3 EXPRES | G3 W1
 Z3 -> =
-S -> VAR A1 | VAR B1 | VAR C1 | VAR D1 | VAR E1
 A1 -> Z3 VV
 B1 -> OPS B2
 B2 -> Z3 VV
@@ -9,10 +9,10 @@ D1 -> OPS D2
 D2 -> Z3 VV
 E1 -> OPS E2
 E2 -> Z3 VV
-VV ->  VAR | VV F1 | number | VV G1 | VV H1 | VV I1 | Y3 J1 | true | false | BOOL K1 | BOOL L1 | T3 BOOL | VV M1 | VV N1 | VV O1
+VV ->  VAR | VV F1 | number | VV G1 | VV H1 | VV I1 | Y3 J1 | I3 INBRACKET | TYPE U1 | true | false | BOOL K1 | BOOL L1 | S3 BOOL | VV M1 | VV N1 | P3 O1 | O3 P1 | STRING Q1
 F1 -> OPS VV
 VAR -> variable
-VAL -> number | VV G1 | VV H1 | VV I1 | Y3 J1 | true | false | BOOL K1 | BOOL L1 | T3 BOOL | VV M1 | VV N1 | VV O1
+VAL -> number | VV G1 | VV H1 | VV I1 | Y3 J1 | true | false | BOOL K1 | BOOL L1 | S3 BOOL | VV M1 | VV N1 | P3 O1 | O3 P1 | STRING Q1
 G1 -> OPS VV
 H1 -> OPS H2
 H2 -> OPS VV
@@ -21,17 +21,51 @@ I2 -> OPS VV
 Y3 -> (
 X3 -> )
 J1 -> VV X3
-BOOL -> true | false | BOOL K1 | BOOL L1 | T3 BOOL | VV M1 | VV N1 | VV O1
-W3 -> and
-K1 -> W3 BOOL
-U3 -> or
-L1 -> U3 BOOL
-T3 -> not
-S3 -> is
-M1 -> S3 VV
-R3 -> ==
-N1 -> R3 VV
-Q3 -> !=
-O1 -> Q3 VV
+RELATION -> > | < | Z3 Z3 | W3 Z3 | RELATION Z3 | RELATION Z3
+W3 -> ! | STRING W4
+BOOL -> true | false | BOOL K1 | BOOL L1 | S3 BOOL | VV M1 | VV N1
+U3 -> and
+K1 -> U3 BOOL
+T3 -> or
+L1 -> T3 BOOL
+S3 -> not | M3 S
+R3 -> is
+M1 -> R3 VV
+N1 -> RELATION VV
 OPS -> + | - | * | / | %
-S0 -> VAR A1 | VAR B1 | VAR C1 | VAR D1 | VAR E1
+Q3 -> string
+P3 -> "
+STRING -> P3 O1 | O3 P1 | STRING Q1
+O1 -> Q3 P3
+O3 -> '
+P1 -> Q3 O3
+Q1 -> OPS STRING
+INBRACKET -> Y3 R1 | Y3 X3
+R1 -> VV X3
+N3 -> print
+PRINT -> N3 INBRACKET
+M3 -> :
+EXPRES -> Y3 S1 | BOOL T1
+S1 -> BOOL S2
+S2 -> X3 S3
+T1 -> M3 S
+L3 -> if
+IF -> L3 EXPRES | IF ELIF | IF ELSE
+K3 -> elif
+ELIF -> K3 EXPRES | ELIF ELIF | ELIF ELSE
+J3 -> else
+ELSE -> J3 M3
+TYPE -> str | float | int | double
+I3 -> input
+INPUT -> I3 INBRACKET | TYPE U1
+U1 -> Y3 U2
+U2 -> INPUT X3
+H3 -> while
+WHILE -> H3 EXPRES
+G3 -> for
+F3 -> in
+FOR -> G3 W1
+W1 -> VAR W2
+W2 -> F3 W3
+W4 -> M3 S
+S0 -> S S | VAR A1 | VAR B1 | VAR C1 | VAR D1 | VAR E1 | L3 EXPRES | IF ELIF | IF ELSE | N3 INBRACKET | H3 EXPRES | G3 W1
