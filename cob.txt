@@ -1,0 +1,11 @@
+Terminals:
++ - ( ) ^ * / // ** = number variable int float str double is " ' format input True False and or not > < >= <= == != in
+Variables:
+S OPS STRING INPUT VV BOOL
+Productions:
+S -> variable = number | variable = variable OPS variable | variable = variable | variable += variable | variable -= variable | PRINT | """ STRING """ | # STRING;
+OPS -> + | - | * | / | // | **;
+STRING -> " variable " | " number " | ' variable ' | ' number ' | str ( number ) | STRING + STRING | STRING . format ( );
+VV -> variable | number | int ( INPUT ) | float ( INPUT ) | str ( INPUT ) | int ( variable ) | int ( S ) | float ( S ) | str ( S ) | double ( S ) | float ( variable ) | VV is VV | str ( variable );
+BOOL -> False | True | BOOL and BOOL | BOOL or BOOL | not BOOL | VV != VV | VV > VV | VV >= VV | VV <= VV | VV == VV | ( BOOL ) | STRING in VV;
+INPUT -> variable input ( )

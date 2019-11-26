@@ -1,1 +1,1 @@
-import a as b
+print("aasdfghj")
