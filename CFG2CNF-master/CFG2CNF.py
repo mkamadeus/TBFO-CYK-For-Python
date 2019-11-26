@@ -152,9 +152,7 @@ if __name__ == '__main__':
 	Productions = UNIT(Productions, variables=V)
 	print(Productions)
 	convertToMap(Productions)
+	print(CNF)
 	print( helper.prettyForm(Productions) )
 	print( len(Productions) )
-	for key in CNF:
-		print(CNF[key],"->", key)
 	open('out.txt', 'w').write(	helper.prettyForm(Productions) )
-

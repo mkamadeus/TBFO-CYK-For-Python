@@ -27,7 +27,7 @@ FOR -> for VAR in STRING :;
 FOR -> for VAR in RANGE :;
 BREAK -> break;
 CONTINUE -> continue;
-S -> variable = number | variable = variable OPS variable | variable = variable | variable += variable | variable -= variable | PRINT | """ STRING """ | # STRING;
+S -> variable = number | variable = variable OPS variable | variable = variable | variable += variable | variable -= variable | PRINT | """ STRING """ | # STRING | S S;
 OPS -> + | - | * | / | // | ** | %;
 STRING -> " variable " | " number " | ' variable ' | ' number ' | str ( number ) | STRING + STRING | STRING . format ( );
 INPUT -> variable input ( );
