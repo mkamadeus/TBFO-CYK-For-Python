@@ -58,6 +58,11 @@ H3 -> "
 L1 -> R3 L2
 L2 -> H3 L3
 L4 -> H3 Q3
+PRINTVALUE -> VV M1
+PRINTVALUE -> string
+M1 -> R3 M2
+M2 -> N3 M3
+M4 -> Q3 OPS
 RAISE -> raise STRING
 RANGE -> range M1 | range N1
 M1 -> R3 M2
@@ -98,10 +103,10 @@ D11 -> . D12
 D12 -> B3 D13
 D13 -> R3 Q3
 A3 -> input
-INPUT -> VV E11
-E11 -> A3 E12
-E12 -> R3 Q3
-VV -> variable | number | Z2 F11 | Y2 G11 | C3 H11 | Z2 I11 | Z2 J11 | Y2 K11 | C3 L11 | X2 M11 | Y2 N11 | VV O11 | C3 P11
+INPUT -> VV F11
+F11 -> A3 F12
+F12 -> R3 Q3
+VV -> variable | number | Z2 G11 | Y2 H11 | C3 I11 | Z2 J11 | Z2 K11 | Y2 L11 | C3 M11 | X2 N11 | Y2 O11 | VV P11 | C3 Q11
 Z2 -> int
 F11 -> R3 F12
 F12 -> INPUT Q3
