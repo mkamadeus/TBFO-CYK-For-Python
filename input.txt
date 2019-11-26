@@ -1,1 +1,1 @@
-import a as b
+class asa():

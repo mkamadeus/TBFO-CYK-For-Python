@@ -59,7 +59,7 @@ L1 -> R3 L2
 L2 -> H3 L3
 L4 -> H3 Q3
 PRINTVALUE -> VV M1
-PRINTVALUE -> thisisastring
+PRINTVALUE -> string
 M1 -> R3 M2
 M2 -> N3 M3
 M4 -> Q3 OPS
@@ -106,7 +106,7 @@ A3 -> input
 INPUT -> VV F11
 F11 -> A3 F12
 F12 -> R3 Q3
-VV -> variable | number | Z2 G11 | Y2 H11 | C3 I11 | Z2 J11 | Z2 K11 | Y2 L11 | C3 M11 | X2 N11 | Y2 O11 | VV P11 | C3 Q11 | thisisavar
+VV -> variable | number | Z2 G11 | Y2 H11 | C3 I11 | Z2 J11 | Z2 K11 | Y2 L11 | C3 M11 | X2 N11 | Y2 O11 | VV P11 | C3 Q11
 Z2 -> int
 G11 -> R3 G12
 G12 -> INPUT Q3
