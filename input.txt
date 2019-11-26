@@ -1,1 +1,1 @@
-print("aasdafwefefsfasfda")
+import a as b

@@ -21,4 +21,4 @@ table = cyk.cyk(tokenizedCode)
 for x in table:
     print(x)
 
-print(cyk.checkValidity(table, "PRINT"))
+print(cyk.checkValidity(table, "S"))

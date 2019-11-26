@@ -6,7 +6,7 @@ regexList = [r'[A..z]*']
 
 # Maps regex into valid key
 regexMap = {
-    r'[A..z]*' : "thisisastring"
+    r'[A..z]*' : ["thisisastring", "thisisavar"]
 }
 
 # Grammar in CNF form
@@ -61,7 +61,11 @@ def cyk(tokenizedInput):
                 # x = re.match(pattern, tokenizedInput[i])
                 # print(x)
                 if(re.match(pattern, tokenizedInput[i])):
-                    cykTable[0][i].extend(chomskyGrammar[regexMap[pattern]])
+                    for regexType in regexMap[pattern]:
+                        try:
+                            cykTable[0][i].extend(chomskyGrammar[regexType])
+                        except KeyError:
+                            continue
                     break
 
                 
