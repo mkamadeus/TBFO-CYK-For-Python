@@ -18,8 +18,7 @@ IF -> if BOOL :;
 ELIF -> elif BOOL :;
 ELSE -> else :;
 PRINT -> print ( PRINTVALUE ) | print ( ) | print ( " PRINTVALUE " );
-PRINTVALUE -> VV ( , VV ) *;
-PRINTVALUE -> string
+PRINTVALUE -> VV;
 RAISE -> raise STRING;
 RANGE -> range ( VAL );
 RANGE -> range ( VAL , VAL );

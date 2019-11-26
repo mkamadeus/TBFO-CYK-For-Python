@@ -1,0 +1,23 @@
+Terminals:
++ - * / % and or variable number is ! not = > < ( ) true false string ' " if elif else : print input str float int double while for in range
+Variables:
+S VV VAR VAL BOOL OPS STRING IF ELIF ELSE PRINT EXPRES RELATION INPUT INBRACKET TYPE WHILE FOR RANGE
+Productions:
+S -> S S | VAR = VV | VAR + = VV | VAR - = VV | VAR * = VV | VAR / = VV | IF | PRINT | WHILE | FOR; 
+VV ->  VAR | VAL | VV OPS VV | INPUT;
+VAR -> variable;
+VAL -> number | VV OPS VV | VV * * VV | VV / / VV | ( VV ) | BOOL | STRING;
+RELATION -> > | < | = = | ! = | < = | > =;
+BOOL -> true | false | BOOL and BOOL | BOOL or BOOL | not BOOL | VV is VV | VV RELATION VV;
+OPS -> + | - | * | / | %;
+STRING -> " string " | ' string ' | STRING + STRING;
+INBRACKET -> ( VV ) | ( );
+PRINT -> print INBRACKET;
+EXPRES -> ( BOOL ) : S | BOOL : S;
+IF -> if EXPRES | IF ELIF | IF ELSE;
+ELIF -> elif EXPRES | ELIF ELIF | ELIF ELSE;
+ELSE -> else :;
+TYPE -> str | float | int | double;
+INPUT -> input INBRACKET | TYPE ( INPUT );
+WHILE -> while EXPRES;
+FOR -> for VAR in STRING : S

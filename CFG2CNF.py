@@ -141,7 +141,7 @@ if __name__ == '__main__':
 	if len(sys.argv) > 1:
 		modelPath = str(sys.argv[1])
 	else:
-		modelPath = 'part.txt'
+		modelPath = 'cfg.txt'
 	
 	K, V, Productions = helper.loadModel( modelPath )
 
@@ -155,4 +155,4 @@ if __name__ == '__main__':
 	print(CNF)
 	print( helper.prettyForm(Productions) )
 	print( len(Productions) )
-	open('out.txt', 'w').write(	helper.prettyForm(Productions) )
+	open('out2.txt', 'w').write(	helper.prettyForm(Productions) )
