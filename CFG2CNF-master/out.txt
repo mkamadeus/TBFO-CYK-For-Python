@@ -73,7 +73,7 @@ O1 -> VAR O2
 O2 -> H3 O3 | <=
 BREAK -> break
 CONTINUE -> continue
-S -> VV P1 | VV Q1 | VV R1 | VV S1 | VV T1 | """ U1 | # STRING | I3 J1
+S -> VV P1 | VV Q1 | VV R1 | VV S1 | VV T1 | """ U1 | # STRING | S S | I3 J1
 P1 -> G3 VV
 Q1 -> G3 Q2
 Q2 -> VV Q3 | >

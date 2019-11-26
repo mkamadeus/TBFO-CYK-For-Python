@@ -1,1 +1,1 @@
-print(pisanggorengtepung)
+import a as b

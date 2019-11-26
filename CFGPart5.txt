@@ -17,7 +17,7 @@ PARAMETER -> ( VV ( , VV ) * );
 IF -> if BOOL :;
 ELIF -> elif BOOL :;
 ELSE -> else :;
-PRINT -> print ( PRINTVALUE );
+PRINT -> print ( PRINTVALUE ) | print ( ) | print ( " PRINTVALUE " );
 PRINTVALUE -> VV ( , VV ) *;
 RAISE -> raise STRING;
 RANGE -> range ( VAL );

@@ -1,0 +1,8 @@
+PRINT -> PRED CON
+PRED -> print
+CON -> DUCK FUDGE
+CON -> DUCK GORILLA
+GORILLA -> EGG FUDGE
+DUCK -> (
+EGG -> string
+FUDGE -> )
