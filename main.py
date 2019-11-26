@@ -21,4 +21,7 @@ table = cyk.cyk(tokenizedCode)
 for x in table:
     print(x)
 
-print(cyk.checkValidity(table, "S"))
+if (cyk.checkValidity(table, "S")):
+    print("Verdict accepted! Compile success!")
+else:
+    print("Compile error, wrong syntax!")
