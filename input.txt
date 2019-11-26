@@ -1,1 +1,1 @@
-aaabbbcc
+print(pisanggorengtepung)

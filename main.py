@@ -1,41 +1,15 @@
-import re
-import numpy as np
+import codeTokenizer as ctok
+import cyk
 
-# Read from file
-f = open("input.txt", "r")
-contents = f.read()
-contents = contents.split('\n')
-f.close()
+# Tokenize
+tokenizedCode = ctok.tokenizeInput("input.txt")
 
-result = contents
-print(result)
-result = [string.strip(chr(32)) for string in result]
+print(tokenizedCode)
 
-operators = ['=', '<', '>', '>=', '<=', '==', '!=', r'\+', '-', r'\*', '/', r'\*\*', r'\(', r'\)',r'\'\'\'', r'\'', r'\"']
+# CYK
+table = cyk.cyk(tokenizedCode)
 
-# For each operator..
-for operator in operators:
-    temporaryResult = []
-    # For each statement..
-    for statement in result:
-        format = r"[A..z]*(" + operator +r")[A..z]*"
-        x = re.split(format, statement)
-        
-        # Append 
-        for splitStatement in x:
-            temporaryResult.append(splitStatement) 
-    result = temporaryResult
+for x in table:
+    print(x)
 
-# Strip space
-temporaryResult = []
-for statement in result:
-    stripped = statement.split()
-    for splitStatement in stripped: 
-        temporaryResult.append(splitStatement)
-
-result = temporaryResult
-
-# Strip empty string
-result = [string for string in result if string!='']
-
-print(result)
+print(cyk.checkValidity(table, "PRINT"))
