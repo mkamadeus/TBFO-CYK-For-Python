@@ -54,6 +54,7 @@ PRINT -> I3 J1
 J1 -> R3 J2
 J2 -> PRINTVALUE Q3
 PRINTVALUE -> VV K1
+PRINTVALUE -> thisisastring
 K1 -> R3 K2
 K2 -> N3 K3
 K4 -> Q3 OPS
