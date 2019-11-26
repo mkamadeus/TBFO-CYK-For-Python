@@ -1,6 +1,145 @@
-S -> B A | A B
-A -> B A1 | A S | a
-A1 -> A A
-B -> A B1 | B S | b
-B1 -> B B
-S0 -> B A | A B
+Z3 -> class
+Y3 -> :
+CLASS -> Z3 A1
+A1 -> STRING Y3
+X3 -> def
+DEF -> X3 B1
+B1 -> STRING B2
+B2 -> PARAMETER Y3
+W3 -> from
+FROM -> W3 C1
+C1 -> STRING IMPORT
+U3 -> import
+IMPORT -> U3 STRING | U3 D1
+T3 -> as
+D1 -> STRING D2
+D2 -> T3 STRING
+S3 -> len
+R3 -> (
+Q3 -> ) | OPS VV
+METHOD -> S3 E1 | STRING PARAMETER | P3 F1
+E1 -> R3 E2
+E2 -> VAR Q3
+P3 -> with
+O3 -> open | RANGE Y3
+N3 -> , | STRING Y3
+M3 -> ' | N3 M4
+F1 -> O3 F2
+F2 -> R3 F3
+F3 -> STRING F4 | +=
+F4 -> N3 F5
+F5 -> M3 F6
+F6 -> STRING F7
+F7 -> M3 F8
+F8 -> Q3 F9
+F9 -> T3 STRING
+NONE -> none
+PARAMETER -> R3 Q3 | R3 G1
+G1 -> VV G2
+G2 -> R3 G3
+G3 -> N3 G4 | =
+G4 -> VV G5
+G5 -> Q3 G6
+G6 -> OPS Q3
+L3 -> if
+IF -> L3 H1
+H1 -> BOOL Y3
+K3 -> elif | VV K4
+ELIF -> K3 I1
+I1 -> BOOL Y3
+J3 -> else
+ELSE -> J3 Y3
+I3 -> print
+PRINT -> I3 J1
+J1 -> R3 J2
+J2 -> PRINTVALUE Q3
+PRINTVALUE -> VV K1
+K1 -> R3 K2
+K2 -> N3 K3
+K4 -> Q3 OPS
+RAISE -> raise STRING
+RANGE -> range L1 | range M1
+L1 -> R3 L2
+L2 -> VAL Q3
+M1 -> R3 M2
+M2 -> VAL M3
+M4 -> VAL Q3
+WHILE -> while BOOL:
+H3 -> in
+FOR -> for N1 | for O1
+N1 -> VAR N2
+N2 -> H3 N3 | ==
+O1 -> VAR O2
+O2 -> H3 O3 | <=
+BREAK -> break
+CONTINUE -> continue
+S -> VV P1 | VV Q1 | VV R1 | VV S1 | VV T1 | """ U1 | # STRING | I3 J1
+P1 -> G3 VV
+Q1 -> G3 Q2
+Q2 -> VV Q3 | >
+R1 -> G3 VV
+S1 -> F3 VV
+E3 -> -=
+T1 -> E3 VV
+U1 -> STRING """
+OPS -> + | - | * | / | // | ** | %
+D3 -> "
+STRING -> D3 W1 | D3 X1 | M3 Y1 | M3 Z1 | C3 A11 | STRING B11 | STRING C11
+W1 -> VV D3
+X1 -> VV D3
+Y1 -> VV M3
+Z1 -> VV M3
+C3 -> str
+A11 -> R3 A12
+A12 -> VV Q3
+B11 -> OPS STRING
+B3 -> format
+C11 -> . C12
+C12 -> B3 C13
+C13 -> R3 Q3
+A3 -> input
+INPUT -> VV D11
+D11 -> A3 D12
+D12 -> R3 Q3
+VV -> variable | number | Z2 E11 | Y2 F11 | C3 G11 | Z2 H11 | Z2 I11 | Y2 J11 | C3 K11 | X2 L11 | Y2 M11 | VV N11 | C3 O11
+Z2 -> int
+E11 -> R3 E12
+E12 -> INPUT Q3
+Y2 -> float
+F11 -> R3 F12
+F12 -> INPUT Q3
+G11 -> R3 G12
+G12 -> INPUT Q3
+H11 -> R3 H12
+H12 -> VV Q3
+I11 -> R3 I12
+I12 -> S Q3
+J11 -> R3 J12
+J12 -> S Q3
+K11 -> R3 K12
+K12 -> S Q3
+X2 -> double
+L11 -> R3 L12
+L12 -> S Q3
+M11 -> R3 M12
+M12 -> VV Q3
+W2 -> is
+N11 -> W2 VV
+O11 -> R3 O12
+O12 -> VV Q3
+BOOL -> False | True | BOOL P11 | BOOL Q11 | S2 BOOL | VV R11 | VV S11 | VV T11 | VV U11 | VV W11 | R3 X11 | STRING Y11
+U2 -> and
+P11 -> U2 BOOL
+T2 -> or
+Q11 -> T2 BOOL
+S2 -> not
+R2 -> !=
+R11 -> R2 VV
+S11 -> Q2 VV
+P2 -> >=
+T11 -> P2 VV
+U11 -> O2 VV
+W11 -> N2 VV
+X11 -> BOOL Q3
+Y11 -> H3 VV
+S0 -> Z3 A1
