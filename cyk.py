@@ -57,7 +57,4 @@ def cyk(tokenizedInput):
 
 # Check if table valid
 def checkValidity(table, wanted):
-    if(wanted in table[-1][-1]):
-        return True
-    else:
-        return False
+    return wanted in table[-1][-1]
