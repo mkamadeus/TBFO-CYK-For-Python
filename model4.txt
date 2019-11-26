@@ -1,0 +1,7 @@
+Terminals:
++ - ( ) ^ * / // ** = number variable
+Variables:
+S OPS
+Productions:
+S -> variable = number | variable = variable OPS variable;
+OPS -> + | - | * | / | // | **
