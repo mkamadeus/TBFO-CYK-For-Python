@@ -19,7 +19,6 @@ def cleanProduction(expression):
 	result = []
 	#remove spaces and explode on ";"
 	rawRulse = expression.replace('\n','').split(';')
-	
 	for rule in rawRulse:
 		#Explode evry rule on "->" and make a couple
 		leftSide = rule.split(' -> ')[0].replace(' ','')
