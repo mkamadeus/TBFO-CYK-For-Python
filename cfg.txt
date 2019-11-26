@@ -1,0 +1,11 @@
+Terminals:
++ - * / % and or variable number is == != not = ( ) true false
+Variables:
+S VV VAR VAL BOOL OPS
+Productions:
+S -> VAR = VV | VAR + = VV | VAR - = VV | VAR * = VV | VAR / = VV; 
+VV ->  VAR | VAL | VV OPS VV;
+VAR -> variable;
+VAL -> number | VV OPS VV | VV * * VV | VV / / VV | ( VV ) | BOOL;
+BOOL -> true | false | BOOL and BOOL | BOOL or BOOL | not BOOL | VV is VV | VV == VV | VV != VV;
+OPS -> + | - | * | / | %

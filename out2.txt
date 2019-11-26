@@ -1,0 +1,37 @@
+Z3 -> =
+S -> VAR A1 | VAR B1 | VAR C1 | VAR D1 | VAR E1
+A1 -> Z3 VV
+B1 -> OPS B2
+B2 -> Z3 VV
+C1 -> OPS C2
+C2 -> Z3 VV
+D1 -> OPS D2
+D2 -> Z3 VV
+E1 -> OPS E2
+E2 -> Z3 VV
+VV ->  VAR | VV F1 | number | VV G1 | VV H1 | VV I1 | Y3 J1 | true | false | BOOL K1 | BOOL L1 | T3 BOOL | VV M1 | VV N1 | VV O1
+F1 -> OPS VV
+VAR -> variable
+VAL -> number | VV G1 | VV H1 | VV I1 | Y3 J1 | true | false | BOOL K1 | BOOL L1 | T3 BOOL | VV M1 | VV N1 | VV O1
+G1 -> OPS VV
+H1 -> OPS H2
+H2 -> OPS VV
+I1 -> OPS I2
+I2 -> OPS VV
+Y3 -> (
+X3 -> )
+J1 -> VV X3
+BOOL -> true | false | BOOL K1 | BOOL L1 | T3 BOOL | VV M1 | VV N1 | VV O1
+W3 -> and
+K1 -> W3 BOOL
+U3 -> or
+L1 -> U3 BOOL
+T3 -> not
+S3 -> is
+M1 -> S3 VV
+R3 -> ==
+N1 -> R3 VV
+Q3 -> !=
+O1 -> Q3 VV
+OPS -> + | - | * | / | %
+S0 -> VAR A1 | VAR B1 | VAR C1 | VAR D1 | VAR E1

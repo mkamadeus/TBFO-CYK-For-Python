@@ -6,7 +6,7 @@ import sys
 if len(sys.argv) > 1:
     modelPath = str(sys.argv[1])
 else:
-	modelPath = 'out.txt'
+	modelPath = 'out2.txt'
 	
 cyk.LoadCNF(modelPath)
 
