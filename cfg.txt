@@ -1,9 +1,9 @@
 Terminals:
-+ - * / % and or variable number is ! not = > < ( ) true false string ' " if elif else : print input str float int double while for in range
++ - * / % and or variable number is ! not = > < ( ) true false string ' " if elif else : print input str float int double while for in range def
 Variables:
-S VV VAR VAL BOOL OPS STRING IF ELIF ELSE PRINT EXPRES RELATION INPUT INBRACKET TYPE WHILE FOR RANGE
+S VV VAR VAL BOOL OPS STRING IF ELIF ELSE PRINT EXPRES RELATION INPUT INBRACKET TYPE WHILE FOR RANGE DEF
 Productions:
-S -> S S | VAR = VV | VAR + = VV | VAR - = VV | VAR * = VV | VAR / = VV | IF | PRINT | WHILE | FOR; 
+S -> S S | VAR = VV | VAR + = VV | VAR - = VV | VAR * = VV | VAR / = VV | IF | PRINT | WHILE | FOR | DEF; 
 VV ->  VAR | VAL | VV OPS VV | INPUT;
 VAR -> variable;
 VAL -> number | VV OPS VV | VV * * VV | VV / / VV | ( VV ) | BOOL | STRING;
@@ -20,4 +20,5 @@ ELSE -> else :;
 TYPE -> str | float | int | double;
 INPUT -> input INBRACKET | TYPE ( INPUT );
 WHILE -> while EXPRES;
-FOR -> for VAR in STRING : S
+FOR -> for VAR in STRING : S;
+DEF -> def VAR INBRACKET : S

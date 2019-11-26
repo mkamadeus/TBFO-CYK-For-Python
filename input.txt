@@ -1,7 +1,7 @@
 print("alter")
-a=0
+aaa=0
 if(true):
-    a+=1
+    aas+=1
 elif(true == true):
     print('hit')
 if(a > 4):
@@ -15,3 +15,6 @@ while(true):
     g = 2
 for i in "asdfg" :
     a+=1
+
+def gon(art):
+    print('null')
