@@ -56,3 +56,14 @@ for i in range(9,3,1):
     i+=9
 
 print("aasd","asd","asd")
+
+a = with open(FILE_OUTPUT_NAME, 'asdf') as f_out
+
+"""asdf"""
+'''asdfghjmnbas
+dfghjmnb'''
+
+'''asdfghj'''
+
+"""asdfghjmnbasas
+asdfgh"""
