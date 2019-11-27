@@ -19,3 +19,33 @@ class nullity:
     class jir:
         g = 1
 
+if not true:
+    a+=1
+    raise ("asdfg")
+if not true:
+    a+=1
+    break
+if not true:
+    a+=1
+    pass
+if not true:
+    a+=1
+    continue
+
+a = len("niki")
+
+for i in range(9,3,1):
+    i+=9
+
+print("aasd","asd","asd")
+
+a = with open(FILE_OUTPUT_NAME, 'asdf') as f_out
+
+"""asdf"""
+'''asdfghjmnbas
+dfghjmnb'''
+
+'''asdfghj'''
+
+"""asdfghjmnbasas
+asdfgh"""
