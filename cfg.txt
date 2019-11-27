@@ -1,10 +1,10 @@
 Terminals:
-+ - * / % and or variable number is ! not = > < ( ) true false string ' " if elif else : print input str float int double while for in range def class import as from return
++ - * / % and or variable number is ! not = > < ( ) true false string ' " if elif else : print input str float int double while for in range def class import as from return raise len range , break pass continue
 Variables:
-S VV VAR VAL BOOL OPS STRING IF ELIF ELSE PRINT EXPRES RELATION INPUT INBRACKET TYPE WHILE FOR RANGE DEF CLASS IMPORT FROM RETURN
+S VV VAR VAL BOOL OPS STRING IF ELIF ELSE PRINT EXPRES RELATION INPUT INBRACKET TYPE WHILE FOR RANGE DEF CLASS IMPORT FROM RETURN RAISE METHOD RANGE BREAK PASS CONTINUE
 Productions:
 S -> S S | VAR = VV | VAR + = VV | VAR - = VV | VAR * = VV | VAR / = VV | IF | PRINT | WHILE | FOR | DEF | CLASS | IMPORT | FROM; 
-VV ->  VAR | VAL | VV OPS VV | INPUT;
+VV ->  VAR | VAL | VV OPS VV | INPUT | METHOD | VV , VV;
 VAR -> variable;
 VAL -> number | VV OPS VV | VV * * VV | VV / / VV | ( VV ) | BOOL | STRING;
 RELATION -> > | < | = = | ! = | < = | > =;
@@ -14,15 +14,21 @@ STRING -> " string " | ' string ' | STRING + STRING;
 INBRACKET -> ( VV ) | ( );
 PRINT -> print INBRACKET;
 EXPRES -> ( BOOL ) : S | BOOL : S;
-IF -> if EXPRES | IF ELIF | IF ELSE;
+RAISE -> raise INBRACKET;
+BREAK -> break;
+PASS -> pass;
+CONTINUE -> continue;
+IF -> if EXPRES | IF ELIF | IF ELSE | IF RAISE | IF BREAK | IF PASS | IF CONTINUE;
 ELIF -> elif EXPRES | ELIF ELIF | ELIF ELSE;
-ELSE -> else :;
+ELSE -> else : S;
 TYPE -> str | float | int | double;
 INPUT -> input INBRACKET | TYPE ( INPUT );
+RANGE -> range INBRACKET;
 WHILE -> while EXPRES;
-FOR -> for VAR in STRING : S;
+FOR -> for VAR in STRING : S | for VAR in RANGE : S;
 RETURN -> return BOOL | return VAL;
 DEF -> def VAR INBRACKET : S | DEF RETURN;
 CLASS -> class VAR : S;
 IMPORT -> import VAR as VAR | import VAR;
-FROM -> from VAR IMPORT
+FROM -> from VAR IMPORT;
+METHOD -> len INBRACKET
