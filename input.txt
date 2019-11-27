@@ -36,3 +36,23 @@ import pandas as pd
 import matplotlib
 from matplotlib import numpy
 from matplotlib import numpy as np
+
+if not true:
+    a+=1
+    raise ("asdfg")
+if not true:
+    a+=1
+    break
+if not true:
+    a+=1
+    pass
+if not true:
+    a+=1
+    continue
+
+a = len("niki")
+
+for i in range(9,3,1):
+    i+=9
+
+print("aasd","asd","asd")
