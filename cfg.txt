@@ -1,7 +1,7 @@
 Terminals:
 + - * / % and or variable number is ! not = > < ( ) true false string ' " if elif else : print input str float int double while for in range def class import as from return raise len range , break pass continue with open
 Variables:
-S VV VAR VAL BOOL OPS STRING IF ELIF ELSE PRINT EXPRES RELATION INPUT INBRACKET TYPE WHILE FOR RANGE DEF CLASS IMPORT FROM RETURN RAISE METHOD RANGE BREAK PASS CONTINUE COMMENT CONTENT ARRAY
+S VV VAR VAL BOOL OPS STRING IF ELIF ELSE PRINT EXPRES RELATION INPUT INBRACKET TYPE WHILE FOR RANGE DEF CLASS IMPORT FROM RETURN RAISE METHOD RANGE BREAK PASS CONTINUE COMMENT CONTENT
 Productions:
 S -> S S | VAR = VV | VAR + = VV | VAR - = VV | VAR * = VV | VAR / = VV | IF | PRINT | WHILE | FOR | DEF | CLASS | IMPORT | FROM | COMMENT | ARRAY; 
 VV ->  VAR | VAL | VV OPS VV | INPUT | VV , VV | METHOD;
