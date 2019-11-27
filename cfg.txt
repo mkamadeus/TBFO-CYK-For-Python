@@ -1,0 +1,36 @@
+Terminals:
++ - * / % and or variable number is ! not = > < ( ) true false string ' " if elif else : print input str float int double while for in range def class import as from return raise len range , break pass continue with open
+Variables:
+S VV VAR VAL BOOL OPS STRING IF ELIF ELSE PRINT EXPRES RELATION INPUT INBRACKET TYPE WHILE FOR RANGE DEF CLASS IMPORT FROM RETURN RAISE METHOD RANGE BREAK PASS CONTINUE COMMENT CONTENT
+Productions:
+S -> S S | VAR = VV | VAR + = VV | VAR - = VV | VAR * = VV | VAR / = VV | IF | PRINT | WHILE | FOR | DEF | CLASS | IMPORT | FROM | COMMENT | ARRAY; 
+VV ->  VAR | VAL | VV OPS VV | INPUT | VV , VV | METHOD;
+VAR -> variable;
+VAL -> number | VV OPS VV | VV * * VV | VV / / VV | ( VV ) | BOOL | STRING;
+RELATION -> > | < | = = | ! = | < = | > =;
+BOOL -> true | false | BOOL and BOOL | BOOL or BOOL | not BOOL | VV is VV | VV RELATION VV;
+OPS -> + | - | * | / | %;
+STRING -> " string " | ' string ' | STRING + STRING;
+CONTENT -> VAR | CONTENT CONTENT;
+COMMENT -> " " " CONTENT " " " | ' ' ' CONTENT ' ' ';
+INBRACKET -> ( VV ) | ( );
+PRINT -> print INBRACKET;
+EXPRES -> ( BOOL ) : S | BOOL : S;
+RAISE -> raise INBRACKET;
+BREAK -> break;
+PASS -> pass;
+CONTINUE -> continue;
+IF -> if EXPRES | IF ELIF | IF ELSE | IF RAISE | IF BREAK | IF PASS | IF CONTINUE;
+ELIF -> elif EXPRES | ELIF ELIF | ELIF ELSE;
+ELSE -> else : S;
+TYPE -> str | float | int | double;
+INPUT -> input INBRACKET | TYPE ( INPUT );
+RANGE -> range INBRACKET;
+WHILE -> while EXPRES;
+FOR -> for VAR in STRING : S | for VAR in RANGE : S;
+RETURN -> return BOOL | return VAL;
+DEF -> def VAR INBRACKET : S | DEF RETURN;
+CLASS -> class VAR : S;
+IMPORT -> import VAR as VAR | import VAR;
+FROM -> from VAR IMPORT;
+METHOD -> len INBRACKET | with open INBRACKET as VAR

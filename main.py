@@ -6,7 +6,7 @@ import sys
 if len(sys.argv) > 1:
     modelPath = str(sys.argv[1])
 else:
-	modelPath = 'out.txt'
+	modelPath = 'cnf.txt'
 	
 cyk.LoadCNF(modelPath)
 
@@ -21,4 +21,7 @@ table = cyk.cyk(tokenizedCode)
 for x in table:
     print(x)
 
-print(cyk.checkValidity(table, "S"))
+if (cyk.checkValidity(table, "S")):
+    print("Verdict accepted! Compile success!")
+else:
+    print("Compile error, wrong syntax!")

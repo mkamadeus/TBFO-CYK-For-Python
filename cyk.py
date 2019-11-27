@@ -38,10 +38,8 @@ def LoadCNF(modelPath):
         for j in range (len(C)):
             value = chomskyGrammar.get(C[j])
             if (value == None):
-                print(A, "->", C[j])
                 chomskyGrammar.update({C[j] : [A]})
             else :
-                print(A, "->", C[j])
                 chomskyGrammar[C[j]].append(A)
     # print(chomskyGrammar)
 
